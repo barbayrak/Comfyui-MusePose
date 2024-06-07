@@ -786,7 +786,8 @@ class musepose_class:
         ref_image = 255.0 * image[0].cpu().numpy()
         ref_image = Image.fromarray(np.clip(ref_image, 0, 255).astype(np.uint8))
         image_path = os.path.join(PROJECT_DIR, "data/ref_image.jpg")
-
+        ref_image.save(image_path)
+        
         return musepose(args, image_path, video)
  
 
